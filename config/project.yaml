@@ -1,0 +1,18 @@
+paths:
+  data: "data"
+  artifacts: "artifacts"
+  models: "artifacts/models"
+seed: 42
+db_path: "data/telco.duckdb"
+tables:
+  train: "train"
+  validation: "validation"
+  test: "test"
+
+# MLflow: experiment = meta-approach (overridable by CLI --experiment)
+experiment_name: "churn_baseline_balanced"
+
+# Optional: path to rule-based baseline config; if set, baseline_val_* metrics are logged for comparison
+baseline_rules_path: "config/baseline_rules.yaml"
+# Optional tag for filtering (none | class_weights); auto-derived if not set
+# balancing: "class_weights"

@@ -1,0 +1,55 @@
+# Optuna hyperparameter search (config-driven).
+# Params are merged over model.yaml base; only listed params are tuned.
+metric: "val_pr_auc"
+direction: "maximize"
+n_trials: 30
+
+params:
+  # Tree structure
+  depth:
+    type: int
+    low: 3
+    high: 8
+  min_data_in_leaf:
+    type: int
+    low: 1
+    high: 50
+  max_leaves:
+    type: int
+    low: 15
+    high: 64
+  # Training length and learning rate
+  iterations:
+    type: int
+    low: 200
+    high: 600
+  learning_rate:
+    type: float
+    low: 0.01
+    high: 0.2
+    log: true
+  # Regularization
+  l2_leaf_reg:
+    type: float
+    low: 1.0
+    high: 10.0
+  random_strength:
+    type: float
+    low: 0.0
+    high: 5.0
+  # Splits and sampling
+  border_count:
+    type: int
+    low: 32
+    high: 255
+  bagging_temperature:
+    type: float
+    low: 0.0
+    high: 1.0
+  # Policy (SymmetricTree = depth-based; Lossguide = leaves-based)
+  grow_policy:
+    type: categorical
+    choices:
+      - SymmetricTree
+      - Depthwise
+      - Lossguide

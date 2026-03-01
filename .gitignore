@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Pytest
+.pytest_cache/
+
+# IDEs and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Project Specific
+# Ignore generated artifacts but keep the folder structure
+artifacts/*
+!artifacts/.gitkeep
+# MLflow
+mlflow.db
+mlruns/
+# CatBoost training diagnostics (auto-generated)
+catboost_info/
+# Data (raw/processed data and DB)
+data/*
+!data/.gitkeep

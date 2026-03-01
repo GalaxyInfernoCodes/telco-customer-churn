@@ -1,0 +1,22 @@
+# Rule-based baseline for churn. Predict churn (1) if ANY rule_group matches.
+# Each rule_group matches when ALL its conditions hold (AND). Use for comparison to the ML model.
+name: "rule_baseline"
+
+rule_groups:
+  # Short tenure + month-to-month contract
+  - description: "short tenure, month-to-month"
+    conditions:
+      - feature: "tenure"
+        max: 12
+      - feature: "Contract"
+        in: ["Month-to-month"]
+  # High monthly charges (e.g. likely to churn when price-sensitive)
+  - description: "high monthly charges"
+    conditions:
+      - feature: "MonthlyCharges"
+        min: 70
+  # Very short tenure regardless of contract
+  - description: "very new customer"
+    conditions:
+      - feature: "tenure"
+        max: 6

@@ -1,0 +1,37 @@
+[project]
+name = "telco-churn"
+version = "0.1.0"
+description = "Telco Customer Churn Prediction"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas",
+    "pyyaml",
+    "pydantic",
+    "duckdb",
+    "mlflow",
+    "scikit-learn",
+    "catboost>=1.2.8",
+    "matplotlib",
+    "seaborn",
+    "optuna",
+]
+
+[dependency-groups]
+dev = [
+    "jupyter",
+    "notebook>=7.5.1",
+    "pytest",
+    "seaborn>=0.13.2",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: Integration tests (require DuckDB and MLflow runs)",
+]
+
+[build-system]
+requires = ["uv_build>=0.9"]
+build-backend = "uv_build"
+
+

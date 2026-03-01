@@ -1,0 +1,7 @@
+model_type: "catboost"
+run_name: "baseline_balanced"
+params:
+  iterations: 100
+  depth: 6
+  loss_function: "Logloss"
+  auto_class_weights: "Balanced"
