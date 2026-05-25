@@ -1,0 +1,25 @@
+resources:
+  jobs:
+    demo_3_workflow:
+      name: "[${bundle.target}] Demo 3 Feature Prep & Inference"
+
+      environments:
+        - environment_key: default
+          spec:
+            client: "1"
+
+      tasks:
+        - task_key: feature_prep
+          environment_key: default
+          notebook_task:
+            notebook_path: ../notebooks/demo_3a_feature_prep.py
+
+        - task_key: batch_inference
+          depends_on:
+            - task_key: feature_prep
+          environment_key: default
+          notebook_task:
+            notebook_path: ../notebooks/demo_3b_batch_inference.py
+
+      queue:
+        enabled: true
