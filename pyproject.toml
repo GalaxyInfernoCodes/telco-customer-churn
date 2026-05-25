@@ -16,6 +16,7 @@ dependencies = [
     "seaborn",
     "optuna",
     "databricks-connect==15.4.*",
+    "google-genai>=2.6.0",
 ]
 
 [dependency-groups]

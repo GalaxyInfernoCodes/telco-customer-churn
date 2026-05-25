@@ -29,7 +29,7 @@ tasks:
   mlflow:
     desc: Start the MLflow UI
     cmds:
-      - uv run mlflow ui --backend-store-uri sqlite:///mlflow.db
+      - uv run mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5001
 
   explore:
     desc: Run exploratory data analysis

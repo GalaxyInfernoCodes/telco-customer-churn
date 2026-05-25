@@ -83,9 +83,9 @@ uv run scripts/evaluate_on_test.py
 To view your experiments and training runs, start the MLflow UI:
 
 ```bash
-uv run mlflow ui --backend-store-uri sqlite:///mlflow.db
+uv run mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5001
 ```
-Navigate to [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+Navigate to [http://127.0.0.1:5001](http://127.0.0.1:5001) in your browser.
 
 ## Testing
 
