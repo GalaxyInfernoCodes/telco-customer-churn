@@ -3,7 +3,7 @@ name = "telco-churn"
 version = "0.1.0"
 description = "Telco Customer Churn Prediction"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = "~=3.11.0"
 dependencies = [
     "pandas",
     "pyyaml",
@@ -15,6 +15,7 @@ dependencies = [
     "matplotlib",
     "seaborn",
     "optuna",
+    "databricks-connect==15.4.*",
 ]
 
 [dependency-groups]

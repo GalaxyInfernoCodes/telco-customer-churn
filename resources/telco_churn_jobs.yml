@@ -1,0 +1,20 @@
+resources:
+  jobs:
+    example_training_job:
+      name: "[${bundle.target}] Telco Churn Training"
+      
+      environments:
+        - environment_key: default
+          spec:
+            client: "1"
+            dependencies:
+              - ../dist/*.whl
+
+      tasks:
+        - task_key: train
+          environment_key: default
+          spark_python_task:
+            python_file: ../scripts/train_wrapper.py
+      
+      queue:
+        enabled: true

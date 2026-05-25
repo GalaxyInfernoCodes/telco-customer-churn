@@ -1,0 +1,57 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Install dependencies and setup environment
+    cmds:
+      - uv sync
+
+  ingest:
+    desc: Ingest raw data into DuckDB
+    cmds:
+      - uv run scripts/ingest_data.py
+
+  train:
+    desc: Run the training pipeline
+    cmds:
+      - uv run scripts/train_wrapper.py
+
+  tune:
+    desc: Run hyperparameter tuning
+    cmds:
+      - uv run scripts/tune.py
+
+  test:
+    desc: Run unit and integration tests
+    cmds:
+      - uv run pytest
+
+  mlflow:
+    desc: Start the MLflow UI
+    cmds:
+      - uv run mlflow ui --backend-store-uri sqlite:///mlflow.db
+
+  explore:
+    desc: Run exploratory data analysis
+    cmds:
+      - uv run scripts/explore_data.py
+
+  deploy:
+    desc: Deploy the project as a Databricks Asset Bundle
+    cmds:
+      - databricks bundle deploy
+
+  validate:
+    desc: Validate the Databricks bundle
+    cmds:
+      - databricks bundle validate
+
+  run-job:
+    desc: Run the example training job on Databricks
+    cmds:
+      - databricks bundle run example_training_job
+
+  run-demo:
+    desc: Run the Demo 3 notebook workflow on Databricks
+    cmds:
+      - databricks bundle run demo_3_workflow

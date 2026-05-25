@@ -51,3 +51,7 @@ catboost_info/
 # Data (raw/processed data and DB)
 data/*
 !data/.gitkeep
+
+.databricks
+
+.databricks
