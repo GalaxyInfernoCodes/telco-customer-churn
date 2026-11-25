@@ -5,6 +5,7 @@ paths:
 seed: 42
 db_path: "data/telco.duckdb"
 tables:
+  raw: "raw"
   train: "train"
   validation: "validation"
   test: "test"

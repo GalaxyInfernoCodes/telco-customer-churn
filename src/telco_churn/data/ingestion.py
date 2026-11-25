@@ -43,6 +43,7 @@ def ingest_data(project_config_path: str):
     
     # Write to tables
     print("Writing to DuckDB...")
+    con.execute(f"CREATE OR REPLACE TABLE {project_config.tables['raw']} AS SELECT * FROM df")
     con.execute(f"CREATE OR REPLACE TABLE {project_config.tables['train']} AS SELECT * FROM train")
     con.execute(f"CREATE OR REPLACE TABLE {project_config.tables['validation']} AS SELECT * FROM val")
     con.execute(f"CREATE OR REPLACE TABLE {project_config.tables['test']} AS SELECT * FROM test")

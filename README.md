@@ -6,6 +6,10 @@ A machine learning project designed to predict telco customer churn using a conf
 
 The project is built as a modular Python package (`telco_churn`) with a strong emphasis on **Config-Driven Development**. All parameters, paths, and feature definitions are externalized in YAML files, allowing for reproducible experiments and easy model adjustments.
 
+## Data Source
+The data used in this project is the Telco Churn dataset, which is a publicly available dataset that can be found on Kaggle or directly on IBM's GitHub repository: https://github.com/IBM/telco-customer-churn-on-icp4d/tree/master/data 
+To run the data ingestion script, the code expects the data to be available in `.csv` file format at: `artifacts/Telco-Customer-Churn.csv`. You can download the data from the link above and place it in the artifacts directory.
+
 ## Core Features
 
 - **Config-Driven**: Centralized configuration management using Pydantic and YAML.
